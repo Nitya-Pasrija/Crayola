@@ -4,22 +4,22 @@ import Card from "./childComponents/Card";
 const cardData = [
   {
     number: 1,
-    title: "What is Crayola?",
-    content:
-      "Crayola is a website that allows users to modify images so that they are more accessible for those with colorblindness. Supported modes include Deuteranomaly, Protanomaly, and Tritanomaly.",
-  },
+    title: "Which image formats are supported?",
+    content: 
+      "Crayola is compatible with a wide range of popular image formats such as JPEG, PNG, WEBP, and more. Whatever format you use, we've got you covered!",
+  },  
   {
     number: 2,
-    title: "How does it work?",
+    title: "How is my image processed?",
     content:
-      "Crayola separates images into individual pixels and applies an algorithm upon each pixel to enhance visibility for the chosen condition.",
+      "Crayola separates images into individual pixels and applies an algorithm upon each pixel to enhance visibility for the chosen condition by increasing the color differenciation.",
   },
   {
     number: 3,
-    title: "Do I have to pay for Crayola?",
-    content:
-      "No Way! Crayola does all the magic in your browser. There are no fees and never will be. Additionally, your data is private. We do not collect any data from our users.",
-  },
+    title: "Is my data secure and private?",
+    content: 
+      "Yes! Crayola processes all operations directly in your browser, which means no personal data is sent to our servers. Thus, the image data remains private.",
+  },  
 ];
 
 const BehindTheScenes: React.FC = () => {
