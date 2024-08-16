@@ -5,11 +5,12 @@ import React, {
   useState,
   useEffect,
 } from "react";
-import { Link } from "react-router-dom";
 import daltonize from "../utils/daltonize";
 import enhanceEdges from "../utils/enhanceEdges";
 import { FaRegTrashAlt, FaFile } from "react-icons/fa";
 import { AiOutlineDownload } from "react-icons/ai";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 type EditorProps = {};
 
@@ -123,17 +124,7 @@ const Editor: React.FC<EditorProps> = () => {
 
   return (
     <>
-      <nav>
-        <div className="max-w-[1100px] px-4 flex justify-between mx-auto h-20 items-center">
-          <p className="text-accent font-bold text-xl">Crayola</p>
-          <ul className="flex gap-6 font-semibold text-sm">
-            <Link to={"/"}>Home</Link>
-            <a href="https://github.com/Nitya-Pasrija/Crayola" target="_blank">
-              Github
-            </a>
-          </ul>
-        </div>
-      </nav>
+      <Navbar />
       <div className="max-w-[1100px] px-4 mx-auto pt-14 pb-14">
         <h1 className="text-center font-bold text-5xl">Image Adjuster</h1>
         <p className="text-center font-semibold mt-4 text-lg opacity-85">
@@ -208,14 +199,14 @@ const Editor: React.FC<EditorProps> = () => {
                 </label>
               </div>
             </div>
-            <button className="w-full mt-8 bg-accent text-light font-semibold py-2 rounded-md flex gap-3 justify-center items-center" onClick={downloadImage}>
+            <button className="w-full mt-8 bg-purple-600 text-light font-semibold py-2 rounded-md flex gap-3 justify-center items-center" onClick={downloadImage}>
               Download Image <span className="text-2xl"><AiOutlineDownload/></span>
             </button>
           </div>
           <div className="w-full px-10 py-8 relative">
           {image && <span className="absolute right-5 top-5 text-xl text-red-500 cursor-pointer z-10" onClick={() => setImage("")}><FaRegTrashAlt/></span>}
             <div
-              className={`w-full h-full border-2 border-accent ${image ? "border-opacity-0" : "border-opacity-50"} border-dashed flex flex-col items-center justify-center
+              className={`w-full h-full border-2 border-purple-600 ${image ? "border-opacity-0" : "border-opacity-50"} border-dashed flex flex-col items-center justify-center
               min-h-[400px] lg:min-h-0 `}
               onDragOver={handleDragOver}
               onDrop={handleDrop}
@@ -231,7 +222,7 @@ const Editor: React.FC<EditorProps> = () => {
                   <p className="text-3xl font-semibold">Drag File Here</p>
                   <p className="text-2xl font-medium my-4">Or</p>
                   <button
-                    className="font-semibold bg-accent text-light py-2 w-60 rounded-xl mb-8 flex justify-center items-center gap-2"
+                    className="font-semibold bg-purple-600 text-light py-2 w-60 rounded-xl mb-8 flex justify-center items-center gap-2"
                     onClick={handleButtonClick}
                   >
                     Choose File <span><FaFile/></span>
@@ -249,6 +240,7 @@ const Editor: React.FC<EditorProps> = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
     // <ImageEditor/>
   );
