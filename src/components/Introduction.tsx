@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-type NavProps = {};
-
-const Navbar: React.FC<NavProps> = () => {
+const Navbar: React.FC = () => {
   return (
     <section className="pt-[72px] pb-24 px-12 max-w-[1200px] flex flex-col items-center mx-auto">
         <h1 className="max-w-[750px] text-3xl sm:text-5xl font-bold text-center leading-tight">

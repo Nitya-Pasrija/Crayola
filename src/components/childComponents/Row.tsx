@@ -1,16 +1,17 @@
 import React from "react";
 
-type ExampleProps = {
+type RowProps = {
   index: number,
   images: string[],
-  name: string
+  name: string,
+  description: string,
 };
 
-const Example: React.FC<ExampleProps> = ({index, name, images}) => {
+const Row: React.FC<RowProps> = ({index, name, images, description}) => {
   return (
-    <div className="">
+    <div className="m-2 p-1">
       <p className="text-2xl font-semibold text-center md:text-left">
-        <span className="text-accent">{index + 1}.</span> User with {name}
+        <span className="text-purple-700">{index + 1}. User with <u>{name}</u></span> 
       </p>
       <div className="flex justify-center md:justify-start flex-wrap items-center mt-6">
         <Item url={images[0]} desc={"Original"}/>
@@ -21,10 +22,13 @@ const Example: React.FC<ExampleProps> = ({index, name, images}) => {
         <Arrow />
         <Item url={images[3]} desc={`Enhanced with ${name}`}/>
       </div>
+      <p className="mt-4 sm:mt-8 mx-auto text-left font-semibold leading-relaxed sm:text-lg">
+        {description}
+      </p>
     </div>
-  );
+  ); 
 };
-export default Example;
+export default Row;
 
 type ItemProps = {
     url: string,

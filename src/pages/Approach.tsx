@@ -1,8 +1,8 @@
 import React from "react";
-import Examples from "../components/Examples";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import GetStarted from "../components/GetStarted";
+import Conditions from "../components/Conditions";
 
 type HomeProps = {};
 
@@ -11,27 +11,20 @@ const Home: React.FC<HomeProps> = () => {
     <>
       <Navbar />
       <section
-        className="py-24 max-w-[1466px] w-full mx-auto px-8 min-h-screen"
-        id="examples"
-      >
-        <h3 className="text-center text-5xl font-bold">Examples</h3>
-        <Examples />
+        className="py-24 max-w-[1466px] w-full mx-auto px-8 min-h-screen" id="examples">
+        <h3 className="text-center text-5xl font-bold">Approach</h3>
+        <p className="mt-4 sm:mt-8 max-w-[1000px] mx-auto text-center font-semibold leading-relaxed sm:text-lg">
+            This tool addresses three specific types of color blindness: 
+            <span className="text-purple-700 font-bold mx-1">Protanomaly</span>, 
+            <span className="text-purple-700 font-bold mx-1">Deuteranomaly</span>, and 
+            <span className="text-purple-700 font-bold mx-1">Tritanomaly</span>. Each type represents a distinct form of color vision deficiency, characterized by unique impairments in perceiving color. Our solution aims to enhance image accessibility by adjusting colors to better align with the needs of individuals affected by these conditions.
+        </p>
+        <Conditions />
       </section>
-      <section className="pt-16 pb-32 px-4">
-        <div className="max-w-[1100px] w-full mx-auto h-[450px] bg-secondary bg-opacity-35 rounded-[48px] flex flex-col items-center justify-center px-4">
-          <p className="max-w-[840px] font-semibold text-2xl sm:text-4xl leading-normal text-center">
-            Upload your image, select your mode and see better. Its that easy
-            with <span className="text-accent"> Crayola </span>.
-          </p>
-          <Link to="/adjust-photos">
-            <button className="mt-8 bg-accent text-light font-semibold py-2.5 w-64 text-lg rounded-xl">
-              Get Started
-            </button>
-          </Link>
-        </div>
-      </section>
+      <GetStarted />
       <Footer />
     </>
   );
 };
+
 export default Home;
